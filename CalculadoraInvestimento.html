@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Calculadora de Investimento</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/estilos.css">
+  </head>
+
+
+  <body>
+  	<header class="container">
+  		<h1>Calculadora de Investimentos</h1>
+
+  	</header>
+
+    <div class="container destaque">
+
+      <section class="busca">
+        <h2>Busca</h2>
+
+          <input type="search">
+          <button>Buscar</button>
+
+      </section>
+      <!-- fim .busca -->
+
+
+      <section class="formulario">
+        <h2>Preencha as informações</h2>
+
+        <nav>
+<!--          <form>  -->
+          <ul>
+
+              <li>Valor do Investimento Mensal:<input type="text" name="valorInvestidoMensal" id='valorInvestidoMensal' value='1000'></li>
+
+
+              <li>Periodo de Investimento:<input type="text" name="prazo" id='prazo' value='12'>(meses)</li>
+
+              <li>Rendimento Anual do Investimento:<input type="text" name="rendimento" id='rendimento' value='8'>%</li>
+
+
+              <li>Média de Inflação anual:<input type="text" name="inflacao" id='inflacao' value='3.75'>%</li>
+            
+              <li><button class="calcular">Calcular</button></li>
+
+            </ul>
+<!--          </form>  -->
+        </nav>
+      </section>
+      <!-- fim .formulario -->
+
+
+
+    </div>
+    <!-- fim .container .destaque -->
+
+    <div class="container">
+      <section class="resultado">
+        resultado do calculo...
+      </section>
+    </div>
+
+
+    <footer>
+      <div class="container">
+        Calculadora de Investimento - DNC Software
+        
+        
+      </div>
+    </footer>
+
+
+  <!-- JavaScript -->
+  <script>
+    var botaoCalcular = document.querySelector('.calcular');
+
+    var resultado = document.querySelector('.resultado');
+
+
+    function colocarDados() {
+
+      var valorInvestidoMensal = document.querySelector('#valorInvestidoMensal').value;
+
+      var periodoInvestimento = document.querySelector('#prazo').value;
+
+      var rendimentoAnual = parseFloat( document.querySelector('#rendimento').value );
+
+      var inflacaoAnual = parseFloat( document.querySelector('#inflacao').value );
+
+      var rendimentoLiquido = rendimentoAnual - inflacaoAnual; 
+
+      var texto;
+
+      texto = 'Valor do Investimento Mensal: R$'+ valorInvestidoMensal;
+
+      texto += '<br> Período de Investimento: '+ periodoInvestimento + ' meses';
+
+      texto += '<br> Rendimento Anual do Investimento: '+rendimentoAnual+' %';
+        
+      texto += '<br> Média de Inflação Anual: '+inflacaoAnual+' %';
+
+      texto += '<p><br>';
+
+      texto += 'Rendimento Líquido Anual do Investimento: '+rendimentoLiquido+' %';
+
+      var taxaMensal = rendimentoAnualParaMensal(rendimentoLiquido);
+
+      texto += '<br> Rendimento Líquido Mensal do Investimento: '+taxaMensal+' %';
+
+      var montate = calcularMontanteInvestimento(valorInvestidoMensal, periodoInvestimento, taxaMensal);
+
+      texto += '<p><br> Ao investir R$ '+valorInvestidoMensal+' mensalmente em um período de '+periodoInvestimento+' meses, com rendimento líquido mensal de '+taxaMensal+'%, no final você conseguirá juntar um montate de R$ '+montate;
+
+
+      resultado.innerHTML = texto;
+    }
+
+
+    function rendimentoAnualParaMensal(txAnual){
+      var x = 1 + (txAnual/100);
+      var resultado = (Math.pow(x, 1/12) - 1) * 100;
+         
+      return resultado;
+
+    }
+  
+    function rendimentoMensalParaAnual(txMensal) {
+      var x = 1 + (txMensal/100);
+      var resultado = x;
+
+      for (var i = 1; i < 12; i++) {
+        resultado *= x;
+      }
+      resultado = (resultado - 1) * 100;
+
+      return resultado;
+        
+    }
+
+    function calcularMontanteInvestimento(valorMensal, periodo, taxaMensal) {
+      var montante = 0;
+      var indice = (taxaMensal/100) + 1;
+
+      for (var i = 0; i < periodo; i++) {
+        montante *= indice;
+        montante += parseFloat(valorMensal);
+        console.log('montante['+i+']: R$ '+montante+'   VALOR MENSAL: R$ '+valorMensal);
+      }
+
+      return montante;
+    }
+
+//    colocarDados();
+
+
+   botaoCalcular.onclick = colocarDados;
+
+  </script>
+
+
+  </body>
+</html>

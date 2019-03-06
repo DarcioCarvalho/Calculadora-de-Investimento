@@ -1,0 +1,122 @@
+
+.menu-opcoes {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.menu-opcoes ul {
+	font-size: 15px;
+}
+
+.menu-opcoes a {
+	color: #003366;
+}
+
+.menu-opcoes ul li {
+	display: inline;
+	margin-left: 20px;
+}
+
+body {
+	color: #333333;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.container {
+	margin: 0 auto;
+	width: 940px;
+}
+
+header {
+	position: relative;
+}
+
+header h1 {
+	color: #6C6CDC;
+	font-size: 23px;
+	font-weight: bold;
+	text-transform: uppercase;
+
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 100px;
+}
+
+.busca,
+.formulario {
+	background-color: #DCDCDC;
+	font-weight: bold;
+	text-transform: uppercase;
+
+	margin-right: 10px;
+	width: 600px;
+	float: left;
+}
+
+.busca h2,
+.busca form,
+.formulario h2 {
+	margin: 10px;
+}
+
+.formulario {
+	clear: left;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+
+.formulario li {
+	background-color: white;
+	margin-bottom: 1px;
+	padding: 5px 10px;
+}
+
+.formulario a {
+	color: #333333;
+	text-decoration: none;
+}
+
+.formulario button {
+	margin-left: 270px;
+	font-size: 20px;
+}
+
+.busca input[type=search] {
+	width: 170px;
+}
+
+
+.destaque {
+	margin-top: 10px;
+}
+
+.resultado {
+	clear: left;
+	background-color: #8C8CFC;
+	text-transform: uppercase;
+
+	position: relative;
+	top: 20px;
+    padding: 20px 15px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	width: 570px;	
+}
+
+footer {
+	padding: 20px 0;
+}
+
+footer .container {
+	position: relative;
+	top: 20px;
+	left: 210px;
+
+	float: left;
+
+	color: #7DCD7D;
+	font-size: 10px;
+	font-weight: bold;		
+}
+
