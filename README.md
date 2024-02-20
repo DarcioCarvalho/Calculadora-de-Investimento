@@ -7,7 +7,7 @@ Nessa página web você informa os seguintes dados:
  - Valor do investimento inicial
  - Período de investimento (em meses)
  - Rendimento anual do investimento
- - Média de infração anual
+ - Média de inflação anual
  
  
  O sistema calculará e retornará os seguintes resultados:
