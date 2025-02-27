@@ -43,21 +43,32 @@ header h1 {
 	margin-left: 100px;
 }
 
+input {
+	margin-inline: 8px;
+}	
+
 .busca,
 .formulario {
-	background-color: #DCDCDC;
+	background-color: #f4f4f5;
 	font-weight: bold;
 	text-transform: uppercase;
 
 	margin-right: 10px;
 	width: 600px;
 	float: left;
+    	border-top-left-radius: 12px;
+    	border-top-right-radius: 12px;
 }
 
 .busca h2,
 .busca form,
 .formulario h2 {
 	margin: 10px;
+}
+
+.formulario h2 {
+	margin-left: 28px;
+    	margin-top: 4px;
 }
 
 .formulario {
@@ -80,6 +91,13 @@ header h1 {
 .formulario button {
 	margin-left: 270px;
 	font-size: 20px;
+	padding: 2px 16px;
+    	border-radius: 8px;
+    	border: 2px solid lightsteelblue;
+}
+
+.formulario button:hover {
+	color: lightsteelblue;
 }
 
 .busca input[type=search] {
@@ -93,7 +111,9 @@ header h1 {
 
 .resultado {
 	clear: left;
-	background-color: #8C8CFC;
+	background-color: #a5b4fc;
+        border: 1px solid #818cf8;
+        border-radius: 4px;
 	text-transform: uppercase;
 
 	position: relative;
@@ -120,3 +140,6 @@ footer .container {
 	font-weight: bold;		
 }
 
+.display-none {
+	display: none
+}
