@@ -7,7 +7,7 @@
 
 A aplicação tem como objetivo fazer uma previsão do resultado financeiro obtido no fim de 12 meses se você investir uma certa quantia mensalmente.
 
-<br><br>
+<br>
 
 ### ⚡ Funcionalidades:
 ---
