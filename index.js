@@ -8,6 +8,12 @@ const { format: priceFormat } = new Intl.NumberFormat('pt-br', {
 const { format: formatDecimal } = new Intl.NumberFormat('pt-br', {
   style: 'decimal',
   minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+});
+
+const { format: formatDecimalMax } = new Intl.NumberFormat('pt-br', {
+  style: 'decimal',
+  minimumFractionDigits: 2,
   maximumFractionDigits: 100
 });
 
@@ -47,7 +53,7 @@ function colocarDados() {
 
   var taxaMensal = rendimentoAnualParaMensal(rendimentoLiquido);
 
-  texto += `<br> Rendimento Líquido Mensal do Investimento: ${formatDecimal(taxaMensal.toString())} %`;
+  texto += `<br> Rendimento Líquido Mensal do Investimento: ${formatDecimalMax(taxaMensal.toString())} %`;
 
   var montante = calcularMontanteInvestimento(valorInvestidoMensal, periodoInvestimento, taxaMensal);
 
